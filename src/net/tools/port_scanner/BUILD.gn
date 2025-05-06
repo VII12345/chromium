@@ -1,0 +1,11 @@
+import("//build/config/clang/compiler.gni")
+
+executable("port_scanner_tool") {
+  sources = [
+    "port_scanner.cc",
+  ]
+  public_deps = [
+    "//base",
+    "//net",
+  ]
+}
