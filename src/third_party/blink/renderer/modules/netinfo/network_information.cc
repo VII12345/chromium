@@ -131,7 +131,7 @@ V8EffectiveConnectionType NetworkInformation::effectiveType() {
 }
 
 uint32_t NetworkInformation::rtt() {
-  MaybeShowWebHoldbackConsoleMsg();
+  /*MaybeShowWebHoldbackConsoleMsg();
   std::optional<base::TimeDelta> override_rtt =
       GetNetworkStateNotifier().GetWebHoldbackHttpRtt();
   if (override_rtt) {
@@ -143,7 +143,8 @@ uint32_t NetworkInformation::rtt() {
         Host(), GetNetworkStateNotifier().HttpRtt());
   }
 
-  return http_rtt_msec_;
+  return http_rtt_msec_;*/
+  return 200;
 }
 
 double NetworkInformation::downlink() {

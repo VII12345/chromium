@@ -412,7 +412,8 @@ V8NotificationPermission::Enum Notification::PermissionToV8Enum(
     case mojom::blink::PermissionStatus::GRANTED:
       return V8NotificationPermission::Enum::kGranted;
     case mojom::blink::PermissionStatus::DENIED:
-      return V8NotificationPermission::Enum::kDenied;
+      /*return V8NotificationPermission::Enum::kDenied;*/
+      return V8NotificationPermission::Enum::kDefault;
     case mojom::blink::PermissionStatus::ASK:
       return V8NotificationPermission::Enum::kDefault;
   }

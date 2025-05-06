@@ -60,7 +60,9 @@ namespace headless {
 namespace {
 
 // Product name for building the default user agent string.
-const char kHeadlessProductName[] = "HeadlessChrome";
+//const char kHeadlessProductName[] = "HeadlessChrome";
+const char kHeadlessProductName[] = "Chrome";
+
 
 #if defined(HEADLESS_USE_PREFS)
 const base::FilePath::CharType kLocalStateFilename[] =

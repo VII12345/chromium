@@ -61,7 +61,11 @@ const char NavigatorPlugins::kSupplementName[] = "NavigatorPlugins";
 
 // static
 DOMPluginArray* NavigatorPlugins::plugins(Navigator& navigator) {
-  return NavigatorPlugins::From(navigator).plugins(navigator.DomWindow());
+  /*return NavigatorPlugins::From(navigator).plugins(navigator.DomWindow());*/
+  DOMPluginArray* pluginsArray =
+      NavigatorPlugins::From(navigator).plugins(navigator.DomWindow());
+  pluginsArray->UpdatePluginData();
+  return pluginsArray;
 }
 
 // static

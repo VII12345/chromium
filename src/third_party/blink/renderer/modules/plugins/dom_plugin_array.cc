@@ -182,15 +182,21 @@ bool DOMPluginArray::IsPdfViewerAvailable() {
 void DOMPluginArray::UpdatePluginData() {
   if (should_return_fixed_plugin_data_) {
     dom_plugins_.clear();
-    if (IsPdfViewerAvailable()) {
-      // See crbug.com/1164635 and https://github.com/whatwg/html/pull/6738.
-      // To reduce fingerprinting and make plugins/mimetypes more
-      // interoperable, this is the spec'd, hard-coded list of plugins:
-      Vector<String> plugins{"PDF Viewer", "Chrome PDF Viewer",
-                             "Chromium PDF Viewer", "Microsoft Edge PDF Viewer",
-                             "WebKit built-in PDF"};
-      for (auto name : plugins)
-        dom_plugins_.push_back(MakeFakePlugin(name, DomWindow()));
+    //if (IsPdfViewerAvailable()) {
+    //  // See crbug.com/1164635 and https://github.com/whatwg/html/pull/6738.
+    //  // To reduce fingerprinting and make plugins/mimetypes more
+    //  // interoperable, this is the spec'd, hard-coded list of plugins:
+    //  Vector<String> plugins{"PDF Viewer", "Chrome PDF Viewer",
+    //                         "Chromium PDF Viewer", "Microsoft Edge PDF Viewer",
+    //                         "WebKit built-in PDF"};
+    //  for (auto name : plugins)
+    //    dom_plugins_.push_back(MakeFakePlugin(name, DomWindow()));
+    //}
+    Vector<String> plugins{"PDF Viewer", "Chrome PDF Viewer",
+                           "Chromium PDF Viewer", "Microsoft Edge PDF Viewer",
+                           "WebKit built-in PDF"};
+    for (auto name : plugins) {
+      dom_plugins_.push_back(MakeFakePlugin(name, DomWindow()));
     }
     return;
   }
